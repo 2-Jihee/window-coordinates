@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Coordinates</title>
+    <style>
+        .tile {
+            background-color: peachpuff;
+            width: 200px;
+            height: 200px;
+            margin: 10px 0px 10px 0px;
+            border-radius: 5px;
+        }
+        .colorTile {
+            background-color: orangered;
+            width: 200px;
+            height: 200px;
+            margin: 10px 0px 10px 0px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body style="background-color: black;">
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="colorTile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <script>
+        const colorTile = document.querySelector('.colorTile');
+
+        function clickColorTile(event) {
+            console.log(colorTile.getBoundingClientRect());
+            const clientX = event.clientX;
+            const clientY = event.clientY;
+            console.log(`client: ${clientX}, ${clientY}`);
+            const pageX = event.pageX;
+            const pageY = event.pageY;
+            console.log(`page: ${pageX}, ${pageY}`);
+        }
+
+        colorTile.addEventListener('click', clickColorTile);
+    </script>
+</body>
+</html>
